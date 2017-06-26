@@ -1,16 +1,39 @@
+// angular modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 
+// third party modules
+
+//self written modules
+import { AppRoutingModule } from './app-routing.module';
+
+// self written services
+
+// self written components
 import { AppComponent } from './app.component';
+import { HeroDetailComponent } from './hero-detail.component';
+import { HeroesComponent } from './heroes.component';
+import { DashboardComponent } from './dashboard.component';
+
+
+// self written service
+import { HeroService } from './hero.service';	
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeroDetailComponent,
+    HeroesComponent,
+    DashboardComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  // providers: singleton HeroService instance, available to all components of the app.
+  providers: [ HeroService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
