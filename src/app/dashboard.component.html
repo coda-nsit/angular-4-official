@@ -1,0 +1,9 @@
+<h3>Top Heroes</h3>
+<div class="grid grid-pad">
+  <!-- [routerLink]: 1. path of the destination route 2. route parameter set to the value of the current hero's id. -->
+  <div *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]" class="col-1-4">
+    <div class="module hero">
+      <h4>{{hero.name}}</h4>
+    </div>
+  </div>
+</div>
